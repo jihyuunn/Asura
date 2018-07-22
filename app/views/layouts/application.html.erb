@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>LOGO</li>
+      <li>추천 점집</li>
+      <li>가까운 점집</li>
+    </ul>
+  </nav>
+  <%= yield %>
+  <footer>Copyright(c) 2018. Asura-balbalta.</footer>
+</body>
+</html>

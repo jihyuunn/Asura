@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fortune.title %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @fortune.rating %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @fortune.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fortune.description %>
+</p>
+
+<% @fortune.comments.each do |comment| %>
+  <%= comment.content %>
+  <%= link_to "destroy", fortune_comment_path(@fortune.id,comment.id), method: 'delete' %>
+<% end %>
+
+<%= form_for Comment.new, url:fortune_comments_path(@fortune.id) do |f| %>
+  <%= f.label "Comment"%>
+  <%= f.text_field :content %>
+  <%= f.submit "go"%>
+<%end%>
+
+<%= link_to 'Edit', edit_fortune_path(@fortune) %> |
+<%= link_to 'Back', fortunes_path %>
